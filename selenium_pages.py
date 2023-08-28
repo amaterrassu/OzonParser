@@ -71,7 +71,7 @@ class UseSelenium:
             meta['link'] = lnk
             links.append(meta)
         links = json.dumps({"products": links})
-        with open('/Users/dankulakovich/PycharmProjects/OzonParser/json_links/' + self.jsonlink, 'w', encoding='utf-8') as f:
+        with open('json_links/' + self.jsonlink, 'w', encoding='utf-8') as f:
             f.write(links)
 
     def get_info(self, link):
@@ -119,5 +119,3 @@ class UseSelenium:
             'rating': rating,
             'review': review
         }
-
-
