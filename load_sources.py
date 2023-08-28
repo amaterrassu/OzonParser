@@ -8,11 +8,13 @@ def main():
     i = 1
     while i <= MAX_PAGE:
         filename = f'page_' + str(i) + '.html'
+        jsonlink = f'page_' + str(i) + '.json'
         if i == 1:
-            UseSelenium(url, filename).save_page()
+            UseSelenium(url, filename, jsonlink).save_page()
         else:
             url_param = url + '?page=' + str(i)
-            UseSelenium(url_param, filename).save_page()
+            print(url_param)
+            UseSelenium(url_param, filename, jsonlink).save_page()
 
         i += 1
 
