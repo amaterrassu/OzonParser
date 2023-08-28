@@ -38,7 +38,8 @@ class UseSelenium:
             time.sleep(5)
             self.get_links()
             html = self.driver.page_source
-            with open('/Users/dankulakovich/PycharmProjects/OzonParser/pages/' + self.filename, 'w', encoding='utf-8') as f:
+            with open('pages/' + self.filename, 'w',
+                      encoding='utf-8') as f:
                 f.write(html)
         except Exception as ex:
             print(ex)
@@ -49,13 +50,17 @@ class UseSelenium:
     def get_links(self):
         links = []
         for i in range(1, 37):
-            links.append(self.driver.find_element(By.XPATH, f'/html/body/div[1]/div/div[1]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[{i}]/a').get_attribute('href'))
+            links.append(self.driver.find_element(By.XPATH,
+                                                  f'/html/body/div[1]/div/div[1]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div/div[{i}]/a').get_attribute(
+                'href'))
         links = json.dumps({"links": links})
-        with open('/Users/dankulakovich/PycharmProjects/OzonParser/json_links/' + self.jsonlink, 'w', encoding='utf-8') as f:
+        with open('json_links/' + self.jsonlink, 'w',
+                  encoding='utf-8') as f:
             f.write(links)
 
     def get_info(self, link):
         try:
             self.driver.get(link)
             time.sleep(3)
-
+        except Exception as e:
+            pass
