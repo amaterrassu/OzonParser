@@ -1,4 +1,3 @@
-import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -30,7 +29,7 @@ class UseSelenium:
         chrome_options.add_argument('start-maximized')
         chrome_options.add_argument('--disable-gpu-rasterization')
         navigator = None
-        driver = uc.Chrome(options=chrome_options, desired_capabilities=chrm_caps)
+        driver = webdriver.Chrome(options=chrome_options, desired_capabilities=chrm_caps)
 
         try:
             driver.get(self.url)
