@@ -4,7 +4,7 @@ def main():
     url = "https://www.ozon.ru/category/kompasy-11461/"
 
     # Ограничим парсинг первыми 10 страницами
-    MAX_PAGE = 10
+    MAX_PAGE = 3
     i = 1
     while i <= MAX_PAGE:
         filename = f'page_' + str(i) + '.html'
